@@ -1,35 +1,9 @@
-// [REFACTORED] ReviewsSection - Hero ratings, 2000 ratings banner, 6 verified review cards, and direct zero-redirect on-site review submission
-import React, { useState, useEffect } from 'react';
+// [REFACTORED] ReviewsSection - Official Google rating spotlight, 2000 ratings banner, 6 verified review cards, and direct 1-click Google review submission
+import React from 'react';
 import { BUSINESS_DATA } from '../data/businessData';
-import { Star, ShieldCheck, ExternalLink, CheckCircle2, MessageSquarePlus, Sparkles } from 'lucide-react';
-import { ReviewModal, UserSubmittedReview } from './ReviewModal';
+import { Star, ShieldCheck, ExternalLink, CheckCircle2 } from 'lucide-react';
 
 export const ReviewsSection: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [userReviews, setUserReviews] = useState<UserSubmittedReview[]>([]);
-
-  // Load any previously submitted local reviews from browser storage
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem('hriday_user_reviews');
-      if (stored) {
-        setUserReviews(JSON.parse(stored));
-      }
-    } catch {
-      // LocalStorage access fallback
-    }
-  }, []);
-
-  const handleAddReview = (newReview: UserSubmittedReview) => {
-    const updated = [newReview, ...userReviews];
-    setUserReviews(updated);
-    try {
-      localStorage.setItem('hriday_user_reviews', JSON.stringify(updated));
-    } catch {
-      // Fallback
-    }
-  };
-
   return (
     <section id="reviews" className="py-28 sm:py-36 bg-brand-surface relative border-t border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,15 +24,19 @@ export const ReviewsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Direct Review Action Button */}
+          {/* Direct 1-Click Google Review Action Button */}
           <div className="flex-shrink-0">
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href={BUSINESS_DATA.ratings.google.writeReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-luxury transition-all shadow-gold-subtle hover:scale-102 active:scale-98"
+              title="Open Google Review Dialog directly"
             >
-              <MessageSquarePlus className="w-4 h-4" />
-              <span>Write a Review / Share Feedback</span>
-            </button>
+              <Star className="w-4 h-4 fill-brand-dark" />
+              <span>Write a Review on Google</span>
+              <ExternalLink className="w-3.5 h-3.5 ml-1" />
+            </a>
           </div>
         </div>
 
@@ -179,67 +157,21 @@ export const ReviewsSection: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="text-[10px] text-brand-dark bg-brand-gold hover:bg-brand-gold-light px-3.5 py-1.5 rounded-full font-bold tracking-luxury uppercase transition-all shadow-sm"
+            <a
+              href={BUSINESS_DATA.ratings.google.writeReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] text-brand-dark bg-brand-gold hover:bg-brand-gold-light px-4 py-2 rounded-full font-bold tracking-luxury uppercase transition-all shadow-sm flex items-center gap-1.5"
             >
-              + Submit Review Directly
-            </button>
+              <Star className="w-3 h-3 fill-brand-dark" />
+              <span>Review on Google</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
             <span className="text-[10px] text-brand-gold bg-brand-dark px-3 py-1.5 rounded-full border border-brand-gold/30 font-semibold tracking-luxury uppercase">
               100% Authentic Feedback
             </span>
           </div>
         </div>
-
-        {/* User-Submitted Reviews (Rendered on top if any exist) */}
-        {userReviews.length > 0 && (
-          <div className="mb-8 space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold text-brand-gold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4" />
-              <span>Direct Guest Reviews (Submitted on Website)</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {userReviews.map((rev) => (
-                <div
-                  key={rev.id}
-                  className="bg-brand-card rounded-2xl border-2 border-brand-gold/60 p-7 flex flex-col justify-between shadow-gold-subtle group"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] uppercase tracking-luxury font-semibold px-3 py-1 rounded-full bg-brand-surface border border-brand-gold/40 text-brand-gold">
-                        {rev.badge}
-                      </span>
-                      <div className="flex items-center gap-0.5 text-brand-gold">
-                        {[...Array(rev.rating)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
-                        ))}
-                      </div>
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-neutral-200 font-light italic leading-relaxed mt-2">
-                      "{rev.comment}"
-                    </p>
-                  </div>
-
-                  <div className="pt-5 mt-6 border-t border-brand-border/60 flex items-center justify-between">
-                    <div>
-                      <h4 className="text-xs font-medium text-white">
-                        {rev.reviewer}
-                      </h4>
-                      <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
-                        {rev.eventContext}
-                      </p>
-                    </div>
-                    <span className="text-[10px] text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-800/50 flex items-center gap-1 font-medium">
-                      <CheckCircle2 className="w-3 h-3" />
-                      <span>{rev.date}</span>
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Verified Public Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -287,13 +219,6 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
       </div>
-
-      {/* Zero-Redirect On-Site Review Modal */}
-      <ReviewModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmitReview={handleAddReview}
-      />
     </section>
   );
 };
