@@ -12,9 +12,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   variant = "light",
   showSubtext = true
 }) => {
-  const goldColor = "#c9a86a";
-  const textColor = variant === "light" ? "#fcfaf6" : "#08090b";
-  const subtextColor = variant === "light" ? "#a8a297" : "#525252";
+  const goldColor = "#d4af37";
+  const textColor = variant === "light" ? "#f5f0e8" : "#0f0f0f";
+  const subtextColor = variant === "light" ? "#a8a29a" : "#525252";
 
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>

@@ -1,6 +1,6 @@
-// [ADDED] SpacesSection showcasing the distinct verified areas of Hriday Hall
+// [FIXED] Removed unused Sparkles import
 import React, { useState } from 'react';
-import { Layers, Check } from 'lucide-react';
+import { Layers, Check, ArrowRight, Users } from 'lucide-react';
 
 export const SpacesSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'hall' | 'stage' | 'dining' | 'facilities'>('hall');
@@ -10,13 +10,16 @@ export const SpacesSection: React.FC = () => {
       name: "The Air-Conditioned Main Hall",
       tagline: "Primary Ceremony & Assembly Floor",
       capacity: "180 – 200 Seated · 300 Floating",
+      capacityBadge: "180–200 Seated",
+      summary: "A grand, naturally acoustic assembly hall tailored for holy rituals, wedding vows, and high-attendance celebrations.",
       specs: [
-        "Fully air-conditioned with wall-mounted & ceiling cassette cooling units",
-        "Vitrified floor tiling with mirror polish finish",
-        "False ceiling design with recessed warm LED spotlights and ceiling fans",
-        "Central carpet runner down the primary aisle for bridal & guest entries",
-        "High-density banquet chairs with protective maroon slipcovers"
+        "Full air-conditioning with wall & cassette cooling units",
+        "Polished vitrified floor tiling with mirror reflection",
+        "False ceiling design with recessed warm LED illumination",
+        "Crimson aisle runner carpet for bridal & VIP entries",
+        "High-density banquet seating with maroon slipcovers"
       ],
+      pills: ["Full Air Conditioning", "Aisle Carpet", "False Ceiling LEDs", "Acoustic Treated"],
       image: "/images/hriday-main-hall-theatre.webp",
       desktopImage: "/images/hriday-main-hall-theatre-1280.webp",
       tabletImage: "/images/hriday-main-hall-theatre-1024.webp",
@@ -27,16 +30,19 @@ export const SpacesSection: React.FC = () => {
       height: 1152
     },
     stage: {
-      name: "The Raised Celebration Stage",
+      name: "The Raised Ceremony Stage",
       tagline: "Focal Platform for Rituals & Felicitations",
-      capacity: "Generous stage platform for up to 15–20 family members",
+      capacity: "15–20 Family Members on Stage",
+      capacityBadge: "Elevated Platform",
+      summary: "Permanent elevated wooden platform equipped with directional spotlighting and structural mounts for floral mandap or backdrops.",
       specs: [
-        "Permanent elevated wooden platform with decorative valance border",
-        "Acoustic rear panelling designed to support floral backdrops and frames",
-        "Overhead directional stage spotlights for photography and videography",
+        "Elevated wooden platform with decorated border skirt",
+        "Acoustic rear panelling designed for floral frames & backdrops",
+        "Overhead directional stage spotlights for photography & 4K video",
         "Dedicated sound & AV operator console adjacent to stage",
-        "Accommodates traditional Mandap, floral jhula (swing), or birthday backdrops"
+        "Accommodates traditional Mandap, floral jhula (swing), or birthday setups"
       ],
+      pills: ["Elevated Platform", "Stage Spotlights", "Acoustic Panelling", "Mandap Ready"],
       image: "/images/hriday-stage-traditional-jhula.webp",
       desktopImage: "/images/hriday-stage-traditional-jhula-1280.webp",
       tabletImage: "/images/hriday-stage-traditional-jhula-1024.webp",
@@ -49,14 +55,17 @@ export const SpacesSection: React.FC = () => {
     dining: {
       name: "The Dedicated Dining Floor",
       tagline: "Independent Dining Space for Seamless Feasts",
-      capacity: "80 – 100 Guests per Dining Rotation",
+      capacity: "80 – 100 Guests per Dining Batch",
+      capacityBadge: "80–100 per Batch",
+      summary: "Separated from the ceremony floor to guarantee dignified uninterrupted rituals while catering banquets proceed concurrently.",
       specs: [
-        "Physically zoned away from the ceremony hall to prevent crowd congestion",
-        "Configurable with round tables or linear banquet dining benches",
-        "Illuminated food counter with warm under-counter lighting",
-        "Dedicated service passage connecting directly to the kitchen pantry",
-        "Ventilated, hygienic dining environment with dedicated hand-wash areas"
+        "Physically segregated floor plan to avoid aroma and crowd mixing",
+        "Configurable with round banquet tables or linear traditional pangat",
+        "Illuminated buffet counter with warm under-counter lighting",
+        "Direct service corridor connecting to the kitchen pantry",
+        "Hygienic hand-wash stations and ventilated dining ambiance"
       ],
+      pills: ["Separate Floor", "Buffet Counters", "Round Tables", "Hygienic Wash"],
       image: "/images/hriday-dining-hall-buffet.webp",
       desktopImage: "/images/hriday-dining-hall-buffet-1280.webp",
       tabletImage: "/images/hriday-dining-hall-buffet-1024.webp",
@@ -67,16 +76,19 @@ export const SpacesSection: React.FC = () => {
       height: 1152
     },
     facilities: {
-      name: "Essential Operational Facilities",
-      tagline: "Infrastructure for Stress-Free Celebrations",
-      capacity: "Supporting all events up to 300 guests",
+      name: "Parking & Arrival Compound",
+      tagline: "Seamless Arrival on Spine Road",
+      capacity: "Up to ~90 Vehicles & Two-Wheelers",
+      capacityBadge: "~90 Vehicle Parking",
+      summary: "Spacious on-site parking compound with wide gate entry, illuminated night facade, and valet attendant coordination.",
       specs: [
-        "Private Bridal / Host Dressing Room with mirrors and preparation seating",
-        "Heavy-duty generator for 100% uninterrupted electricity during functions",
-        "Designated vehicle parking area with valet attendant support for ~90 cars",
-        "Private entrance gate with festive lighting and floral arch mounts",
-        "Prompt on-floor support team in official venue uniform"
+        "Designated vehicle parking compound directly off Spine Road",
+        "Valet attendant coordination to manage incoming vehicular flow",
+        "Multi-storey illuminated facade with official Hriday Hall signage",
+        "Private Bridal / Host changing room for event preparation",
+        "Heavy-duty generator for 100% uninterrupted electricity backup"
       ],
+      pills: ["~90 Parking", "Valet Support", "Spine Road Gate", "Generator Backup"],
       image: "/images/hriday-facade-night.webp",
       desktopImage: "/images/hriday-facade-night-1280.webp",
       tabletImage: "/images/hriday-facade-night-1024.webp",
@@ -97,7 +109,7 @@ export const SpacesSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/20 bg-brand-surface/80 text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/25 bg-brand-card text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
               <Layers className="w-3 h-3 text-brand-gold" />
               <span>Architectural Layout & Spatial Zoning</span>
             </div>
@@ -107,7 +119,7 @@ export const SpacesSection: React.FC = () => {
           </div>
           <p className="text-xs sm:text-sm text-neutral-300 max-w-md mt-4 md:mt-0 font-light leading-relaxed">
             Every square foot of Hriday Hall maintains discrete circulation between ceremonial rituals, 
-            dining hospitality, and guest relaxation.
+            dining hospitality, and guest arrival.
           </p>
         </div>
 
@@ -121,7 +133,7 @@ export const SpacesSection: React.FC = () => {
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
-            Main Banquet Hall
+            1. Main Banquet Hall
           </button>
 
           <button
@@ -132,7 +144,7 @@ export const SpacesSection: React.FC = () => {
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
-            Ceremony Stage
+            2. Ceremony Stage
           </button>
 
           <button
@@ -143,7 +155,7 @@ export const SpacesSection: React.FC = () => {
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
-            Dining & Buffet Floor
+            3. Dining & Buffet Hall
           </button>
 
           <button
@@ -154,15 +166,15 @@ export const SpacesSection: React.FC = () => {
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
-            Parking & Amenities
+            4. Parking & Arrival
           </button>
         </div>
 
         {/* Space Showcase Card */}
-        <div className="bg-brand-card rounded-2xl border-luxury overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-luxury-card">
+        <div className="bg-brand-card rounded-2xl border-luxury overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-luxury-card group">
           
-          {/* Space Image */}
-          <div className="lg:col-span-7 relative min-h-[360px] sm:min-h-[460px] overflow-hidden bg-black">
+          {/* Space Image with Subtle Zoom on Hover */}
+          <div className="lg:col-span-7 relative min-h-[360px] sm:min-h-[480px] overflow-hidden bg-black">
             <picture>
               <source media="(max-width: 640px)" srcSet={currentSpace.mobileImage} type="image/webp" />
               <source media="(max-width: 1024px)" srcSet={currentSpace.tabletImage} type="image/webp" />
@@ -173,17 +185,32 @@ export const SpacesSection: React.FC = () => {
                 alt={currentSpace.alt}
                 width={currentSpace.width}
                 height={currentSpace.height}
-                className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-[0.92]"
+                className="w-full h-full object-cover object-center group-hover:scale-104 transition-all duration-700 filter brightness-[0.94] group-hover:brightness-100"
                 key={currentSpace.image}
               />
             </picture>
-            <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-brand-gold/30 text-[10px] font-semibold text-brand-gold uppercase tracking-luxury shadow-md">
-              {currentSpace.capacity}
+
+            {/* Clear Capacity Badge */}
+            <div className="absolute top-4 left-4 bg-brand-dark/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-brand-gold/40 text-[10px] font-semibold text-brand-gold uppercase tracking-luxury shadow-lg flex items-center gap-1.5">
+              <Users className="w-3.5 h-3.5" />
+              <span>{currentSpace.capacityBadge}</span>
+            </div>
+
+            {/* Feature Pills Overlay Bottom */}
+            <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
+              {currentSpace.pills.map((pill, idx) => (
+                <span
+                  key={idx}
+                  className="bg-black/75 backdrop-blur-sm text-[10px] text-brand-ivory px-2.5 py-1 rounded-md border border-white/10 font-light"
+                >
+                  {pill}
+                </span>
+              ))}
             </div>
           </div>
 
           {/* Space Details & Specifications */}
-          <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between bg-brand-surface/50">
+          <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between bg-brand-surface/70">
             <div>
               <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block">
                 {currentSpace.tagline}
@@ -191,8 +218,12 @@ export const SpacesSection: React.FC = () => {
               <h3 className="font-serif text-2xl sm:text-3xl text-white mt-1.5 font-normal">
                 {currentSpace.name}
               </h3>
+              <p className="text-xs sm:text-sm text-neutral-300 font-light mt-3 leading-relaxed">
+                {currentSpace.summary}
+              </p>
 
-              <div className="mt-8 space-y-3.5">
+              {/* Specs List */}
+              <div className="mt-6 space-y-3">
                 {currentSpace.specs.map((spec, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
@@ -204,18 +235,19 @@ export const SpacesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-8 mt-8 border-t border-brand-border/60 flex items-center justify-between">
+            {/* Micro-CTA for Enquiring for This Space */}
+            <div className="pt-6 mt-6 border-t border-brand-border/60 flex items-center justify-between">
               <div>
                 <p className="text-[10px] uppercase tracking-luxury text-neutral-400">Total Scale</p>
-                <p className="text-sm font-medium text-white">Up to 300 Guests</p>
+                <p className="text-xs sm:text-sm font-medium text-white">{currentSpace.capacity}</p>
               </div>
 
               <a
                 href="#inquiry"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-gold/15 hover:bg-brand-gold text-brand-gold hover:text-brand-dark border border-brand-gold/40 text-xs uppercase tracking-luxury font-bold transition-all duration-300 hover:shadow-gold-subtle"
               >
-                <span>Check Availability</span>
-                <span className="text-sm">→</span>
+                <span>Enquire for This Space</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 

@@ -133,49 +133,67 @@ export const BUSINESS_DATA = {
     }
   ],
 
-  // Verified Event Categories
+  // [REFACTORED] Verified Event Categories matching luxury redesign brief
   events: [
     {
       id: "weddings",
       title: "Weddings & Receptions",
       devanagari: "लग्न व स्वागत समारंभ",
-      description: "An intimate, dignified setting for traditional wedding rituals, varmala, and reception banquets accommodating up to 300 floating guests.",
-      highlight: "Stage + Dining Floor + Valet Parking"
+      capacitySuitability: "Ideal for 150–250 guests (Up to 300 floating)",
+      description: "An intimate, dignified setting for traditional wedding rituals, varmala, and reception banquets with dedicated stage platform and separate feast floor.",
+      highlight: "Stage + Dining Floor + Valet Parking",
+      imageSrc: "/images/hriday-stage-backdrop-setup.webp",
+      imageFallback: "/images/hriday-stage-backdrop-setup.jpg"
     },
     {
       id: "engagements",
-      title: "Sakharpuda & Engagements",
+      title: "Engagement & Sakharpuda",
       devanagari: "साखरपुडा समारंभ",
-      description: "Ideal scale for close family ring ceremonies and sakharpuda celebrations with theatre seating and dedicated catering.",
-      highlight: "Custom Backdrop + Audio Setup"
+      capacitySuitability: "Ideal for 80–180 guests",
+      description: "Ideal scale for close family ring ceremonies and sakharpuda celebrations with comfortable theatre seating, custom floral backdrop, and dedicated catering.",
+      highlight: "Custom Backdrop + Audio Setup",
+      imageSrc: "/images/hriday-hall-stage-perspective.webp",
+      imageFallback: "/images/hriday-hall-stage-perspective.jpg"
     },
     {
-      id: "birthdays",
-      title: "Birthdays & 1st Milestones",
-      devanagari: "वाढदिवस व वर्षपूर्ती",
-      description: "Vibrant celebratory setup for 1st birthday parties, themed decor arches, sound coordination, and family gatherings.",
-      highlight: "Thematic Decor + Music System"
+      id: "pre-wedding",
+      title: "Pre-Wedding Rituals (Haldi & Sangeet)",
+      devanagari: "हळदी, संगीत व मेहंदी",
+      capacitySuitability: "Ideal for 80–150 guests",
+      description: "Vibrant celebratory atmosphere for joyous Haldi ceremonies, Sangeet musical gatherings, and Mehendi rituals with acoustic audio support and stage decor.",
+      highlight: "Ceremonial Stage + AV System",
+      imageSrc: "/images/hriday-stage-traditional-jhula.webp",
+      imageFallback: "/images/hriday-stage-traditional-jhula.jpg"
     },
     {
       id: "traditional",
-      title: "Dohale Jevan & Naming Ceremonies",
-      devanagari: "डोहाळे जेवण व बारसे",
-      description: "Traditional Marathi cultural rituals including ornamental swing (jhula) baby shower setups and naming ceremony arrangements.",
-      highlight: "Traditional Jhula + Cultural Stages"
+      title: "Naming Ceremony & Dohale Jevan",
+      devanagari: "बारसे व डोहाळे जेवण",
+      capacitySuitability: "Ideal for 60–150 guests",
+      description: "Traditional Marathi cultural rituals including ornamental swing (floral jhula) baby shower setups and naming ceremony assemblies with warm hospitality.",
+      highlight: "Traditional Jhula + Cultural Stages",
+      imageSrc: "/images/hriday-stage-traditional-jhula.webp",
+      imageFallback: "/images/hriday-stage-traditional-jhula.jpg"
     },
     {
-      id: "anniversaries",
-      title: "Anniversaries & Family Get-Togethers",
-      devanagari: "कौटुंबिक स्नेहसंमेलन",
-      description: "Celebrate milestones with loved ones in an air-conditioned, professionally managed hall with heartfelt hospitality.",
-      highlight: "Comfortable Seating + Buffet Feasts"
+      id: "birthdays-anniversaries",
+      title: "Milestone Birthdays & Anniversaries",
+      devanagari: "वाढदिवस व वर्धापनदिन",
+      capacitySuitability: "Ideal for 50–150 guests",
+      description: "Celebrate silver anniversaries, 1st birthday milestones, or golden retirements in an air-conditioned hall with flexible decor and festive catering.",
+      highlight: "Thematic Decor + Music System",
+      imageSrc: "/images/hriday-stage-birthday-decor.webp",
+      imageFallback: "/images/hriday-stage-birthday-decor.jpg"
     },
     {
       id: "corporate",
-      title: "Corporate & Social Assemblies",
-      devanagari: "व्यावसायिक व सामाजिक सभा",
-      description: "Spine Road accessibility makes Hriday Hall convenient for company meetings, seminars, community felicitation, and social gatherings.",
-      highlight: "Air Conditioning + Central Location"
+      title: "Corporate Meetings & Seminars",
+      devanagari: "कॉर्पोरेट कार्यक्रम व सभा",
+      capacitySuitability: "Ideal for 50–180 attendees",
+      description: "Convenient Spine Road accessibility for PCMC companies, annual general meetings, business seminars, dealer meets, and felicitation ceremonies.",
+      highlight: "Air Conditioning + Central Location",
+      imageSrc: "/images/hriday-main-hall-theatre.webp",
+      imageFallback: "/images/hriday-main-hall-theatre.jpg"
     }
   ],
 

@@ -1,7 +1,7 @@
-// [FIXED] Removed unused icon imports from InquirySection
+// [REFACTORED] InquirySection - Streamlined consultation form with date picker, celebration pills, guest count pills, response time reassurance, and direct contact alternatives
 import React, { useState } from 'react';
 import { BUSINESS_DATA } from '../data/businessData';
-import { CalendarCheck, MessageSquare, Phone, CheckCircle2, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { CalendarCheck, MessageSquare, Phone, CheckCircle2, Clock, MapPin, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 export const InquirySection: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<1 | 2>(1);
@@ -37,19 +37,19 @@ export const InquirySection: React.FC = () => {
   const generateWhatsAppUrl = () => {
     const text = `Hello Hriday Hall Team,
 
-I would like to inquire about booking availability and packages for our event:
+I would like to inquire about booking availability and packages for our celebration:
 
-*Event Information:*
+*Event Details:*
 • Preferred Date: ${formData.eventDate || 'To be decided'}
-• Time Slot: ${formData.timeSlot}
-• Event Type: ${formData.eventType}
+• Time Slot / Muhurat: ${formData.timeSlot}
+• Celebration Type: ${formData.eventType}
 • Expected Guests: ${formData.guestCount}
 • Catering Preference: ${formData.cateringPreference}
 
 *Host Contact:*
 • Host Name: ${formData.name || 'Not provided'}
 • Contact Phone: ${formData.phone || 'Not provided'}
-${formData.message ? `• Special Requests: ${formData.message}` : ''}
+${formData.message ? `• Additional Notes: ${formData.message}` : ''}
 
 Please confirm date availability and rental/package details.`;
 
@@ -62,7 +62,7 @@ Please confirm date availability and rental/package details.`;
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/20 bg-brand-surface/80 text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/25 bg-brand-card text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
             <CalendarCheck className="w-3 h-3 text-brand-gold" />
             <span>Date Availability & Private Walkthrough</span>
           </div>
@@ -96,7 +96,7 @@ Please confirm date availability and rental/package details.`;
                     href={generateWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-transform active:scale-98"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-transform active:scale-98"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Send via WhatsApp Now</span>
@@ -104,7 +104,7 @@ Please confirm date availability and rental/package details.`;
 
                   <a
                     href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-neutral-700 hover:border-brand-gold text-neutral-200 text-xs uppercase tracking-wider font-semibold transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-neutral-700 hover:border-brand-gold text-neutral-200 text-xs uppercase tracking-wider font-semibold transition-colors"
                   >
                     <Phone className="w-4 h-4 text-brand-gold" />
                     <span>Call +91 91450 83945</span>
@@ -172,8 +172,9 @@ Please confirm date availability and rental/package details.`;
                           min={getTodayString()}
                           value={formData.eventDate}
                           onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                          className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                          className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                         />
+                        <p className="text-[10px] text-neutral-400 mt-1">We verify availability across morning & evening muhurats</p>
                       </div>
 
                       {/* Celebration Type */}
@@ -185,14 +186,14 @@ Please confirm date availability and rental/package details.`;
                           id="inquiry-event"
                           value={formData.eventType}
                           onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
-                          className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                          className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                         >
-                          <option value="Weddings & Receptions">Weddings & Receptions</option>
-                          <option value="Sakharpuda & Engagements">Sakharpuda & Engagements</option>
-                          <option value="Birthdays & 1st Milestones">Birthdays & 1st Milestones</option>
-                          <option value="Dohale Jevan & Naming Ceremonies">Dohale Jevan & Naming Ceremonies</option>
-                          <option value="Anniversaries & Family Get-Togethers">Anniversaries & Family Get-Togethers</option>
-                          <option value="Corporate & Social Assemblies">Corporate & Social Assemblies</option>
+                          <option value="Weddings & Receptions">Weddings & Receptions (लग्नसमारंभ)</option>
+                          <option value="Sakharpuda & Engagements">Sakharpuda & Engagements (साखरपुडा)</option>
+                          <option value="Pre-Wedding Rituals (Haldi/Sangeet)">Pre-Wedding Rituals (हळदी, संगीत, मेहंदी)</option>
+                          <option value="Naming Ceremony & Dohale Jevan">Naming Ceremony & Dohale Jevan (बारसे / डोहाळे जेवण)</option>
+                          <option value="Milestone Birthdays & Anniversaries">Milestone Birthdays & Anniversaries (वाढदिवस व वर्धापनदिन)</option>
+                          <option value="Corporate Meetings & Seminars">Corporate Meetings & Seminars (कॉर्पोरेट कार्यक्रम)</option>
                         </select>
                       </div>
                     </div>
@@ -206,7 +207,7 @@ Please confirm date availability and rental/package details.`;
                         id="inquiry-slot"
                         value={formData.timeSlot}
                         onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                        className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                        className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                       >
                         <option value="Morning Muhurat (7:00 AM – 3:30 PM)">Morning Muhurat Session (7:00 AM – 3:30 PM)</option>
                         <option value="Evening Reception (4:30 PM – 11:00 PM)">Evening Reception Session (4:30 PM – 11:00 PM)</option>
@@ -229,7 +230,7 @@ Please confirm date availability and rental/package details.`;
                             type="button"
                             key={count}
                             onClick={() => setFormData({ ...formData, guestCount: count })}
-                            className={`p-2.5 rounded-lg text-xs font-medium border text-left transition-all ${
+                            className={`p-3 rounded-xl text-xs font-medium border text-left transition-all ${
                               formData.guestCount === count
                                 ? 'bg-brand-gold/15 border-brand-gold text-brand-gold font-semibold'
                                 : 'bg-brand-surface border-neutral-700 text-neutral-300 hover:border-neutral-500'
@@ -241,10 +242,15 @@ Please confirm date availability and rental/package details.`;
                       </div>
                     </div>
 
-                    <div className="pt-4 flex justify-end">
+                    <div className="pt-4 flex items-center justify-between">
+                      <span className="text-[11px] text-neutral-400 font-light flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-brand-gold" />
+                        <span>Typically response in 15–30 mins</span>
+                      </span>
+
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-md active:scale-98"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-gold-subtle hover:scale-102"
                       >
                         <span>Continue to Host Details</span>
                         <ArrowRight className="w-4 h-4" />
@@ -253,100 +259,91 @@ Please confirm date availability and rental/package details.`;
                   </form>
                 )}
 
-                {/* Step 2: Host Details & Submission */}
+                {/* Step 2: Host Contact */}
                 {currentStep === 2 && (
                   <form onSubmit={handleSubmit} className="space-y-5 animate-fadeIn">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {/* Name */}
                       <div>
-                        <label htmlFor="host-fullname" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
+                        <label htmlFor="inquiry-name" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
                           Host Full Name *
                         </label>
                         <input
-                          id="host-fullname"
+                          id="inquiry-name"
                           type="text"
                           required
-                          placeholder="e.g. Anand Kulkarni"
+                          placeholder="e.g. Rahul Deshmukh"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                          className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                         />
                       </div>
 
                       {/* Phone */}
                       <div>
-                        <label htmlFor="host-mobile" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
-                          Mobile Number (WhatsApp) *
+                        <label htmlFor="inquiry-phone" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
+                          WhatsApp / Mobile Phone *
                         </label>
                         <input
-                          id="host-mobile"
+                          id="inquiry-phone"
                           type="tel"
                           required
-                          placeholder="e.g. +91 98765 43210"
+                          placeholder="e.g. 98220 XXXXX"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                          className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                         />
                       </div>
                     </div>
 
                     {/* Catering Preference */}
                     <div>
-                      <label htmlFor="catering-pref" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
-                        Catering & Food Service Preference
+                      <label htmlFor="inquiry-catering" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
+                        Catering Arrangement
                       </label>
                       <select
-                        id="catering-pref"
+                        id="inquiry-catering"
                         value={formData.cateringPreference}
                         onChange={(e) => setFormData({ ...formData, cateringPreference: e.target.value })}
-                        className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                        className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                       >
-                        <option value="Pure Vegetarian Banquet Feast">In-House Pure Vegetarian Banquet Feast</option>
-                        <option value="Multi-Cuisine Vegetarian Buffet">Multi-Cuisine Vegetarian Buffet Spread</option>
-                        <option value="Outside Catering Consultation">Outside Catering Policy Consultation</option>
+                        <option value="Pure Vegetarian Banquet Feast">Pure Vegetarian Banquet Feast (Hall Menu)</option>
+                        <option value="Self / Outside Caterer Preferred">Self / Outside Caterer (Pantry Access)</option>
+                        <option value="High Tea & Snacks Only">High Tea & Snacks Only</option>
                       </select>
                     </div>
 
-                    {/* Notes */}
+                    {/* Special Requests */}
                     <div>
-                      <label htmlFor="host-notes" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
-                        Specific Ritual / Decoration Requirements (Optional)
+                      <label htmlFor="inquiry-msg" className="block text-xs font-medium text-neutral-300 uppercase tracking-wider mb-1.5">
+                        Special Requests or Questions (Optional)
                       </label>
                       <textarea
-                        id="host-notes"
+                        id="inquiry-msg"
                         rows={3}
-                        placeholder="e.g. Mandap requirements, jhula baby shower setup, audio visual setup..."
+                        placeholder="e.g. Mandap decoration preferences, priest muhurat timings, sound requirements..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-brand-surface border border-neutral-700 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
+                        className="w-full bg-brand-surface border border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors"
                       />
                     </div>
 
-                    <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div className="pt-4 flex items-center justify-between">
                       <button
                         type="button"
                         onClick={() => setCurrentStep(1)}
-                        className="text-xs text-neutral-400 hover:text-white underline order-2 sm:order-1"
+                        className="text-xs text-neutral-400 hover:text-white underline"
                       >
-                        ← Back to event date & guests
+                        ← Back to event details
                       </button>
 
-                      <div className="flex gap-2.5 w-full sm:w-auto order-1 sm:order-2">
-                        <a
-                          href={generateWhatsAppUrl()}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
-                        >
-                          <MessageSquare className="w-4 h-4" />
-                          <span>Check via WhatsApp</span>
-                        </a>
-
+                      <div className="flex gap-3">
                         <button
                           type="submit"
-                          className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-gold-subtle hover:scale-102"
                         >
-                          <span>Confirm Inquiry</span>
+                          <Sparkles className="w-4 h-4" />
+                          <span>Request Availability</span>
                         </button>
                       </div>
                     </div>
@@ -356,91 +353,70 @@ Please confirm date availability and rental/package details.`;
             )}
           </div>
 
-          {/* Right Column: Direct Venue Contacts & Real Walkthrough Guidance */}
+          {/* Right Column: Direct Venue Contacts & Reassurance */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Direct Phone & WhatsApp Card */}
-            <div className="bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-7 shadow-xl space-y-5">
-              <div>
-                <span className="text-[11px] uppercase tracking-widest text-brand-gold font-bold">
-                  Direct Venue Office
-                </span>
-                <h3 className="font-serif text-xl text-white mt-1">
-                  Speak Directly With Management
-                </h3>
-                <p className="text-xs text-neutral-300 mt-2 font-light leading-relaxed">
-                  Avoid middlemen and broker fees. Call our venue managers directly for instant confirmation on muhurat dates, 
-                  special packages, and booking deposits.
-                </p>
-              </div>
+            
+            {/* Quick Action Contact Card */}
+            <div className="bg-brand-card rounded-2xl border-luxury p-8 space-y-6 shadow-luxury-card">
+              <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block">
+                Direct Venue Coordination
+              </span>
+              <h3 className="font-serif text-2xl text-white font-normal">
+                Prefer an Immediate Direct Answer?
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                Connect directly with the venue coordinator on Spine Road. Receive prompt confirmation regarding 
+                dates, per-plate menus, and hall setup options.
+              </p>
 
-              <div className="pt-4 border-t border-brand-border/60 space-y-3.5">
-                <a
-                  href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`}
-                  className="flex items-center justify-between p-3.5 rounded-lg bg-brand-surface border border-neutral-700 hover:border-brand-gold transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-md bg-brand-dark flex items-center justify-center text-brand-gold">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-neutral-400 block">Primary Booking Hotline</span>
-                      <span className="text-sm font-semibold text-white group-hover:text-brand-gold transition-colors">{BUSINESS_DATA.contact.primaryPhone}</span>
-                    </div>
-                  </div>
-                  <span className="text-xs text-brand-gold font-semibold">Call Now →</span>
-                </a>
-
-                <a
-                  href={`tel:${BUSINESS_DATA.contact.secondaryPhoneRaw}`}
-                  className="flex items-center justify-between p-3.5 rounded-lg bg-brand-surface border border-neutral-700 hover:border-brand-gold transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-md bg-brand-dark flex items-center justify-center text-brand-gold">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-neutral-400 block">Secondary Booking Line</span>
-                      <span className="text-sm font-semibold text-white group-hover:text-brand-gold transition-colors">{BUSINESS_DATA.contact.secondaryPhone}</span>
-                    </div>
-                  </div>
-                  <span className="text-xs text-brand-gold font-semibold">Call Now →</span>
-                </a>
-
+              {/* Direct Buttons */}
+              <div className="space-y-3 pt-2">
                 <a
                   href={BUSINESS_DATA.contact.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 rounded-lg bg-emerald-950/60 border border-emerald-800 hover:border-emerald-600 transition-colors group"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-md bg-emerald-900/80 flex items-center justify-center text-emerald-400">
-                      <MessageSquare className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-emerald-400 block">Direct WhatsApp Chat</span>
-                      <span className="text-sm font-semibold text-white">+91 91450 83945</span>
-                    </div>
-                  </div>
-                  <span className="text-xs text-emerald-400 font-semibold">Chat Now →</span>
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Direct WhatsApp Inquiries</span>
+                </a>
+
+                <a
+                  href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-brand-border/80 hover:border-brand-gold/60 bg-brand-surface text-neutral-200 hover:text-white font-semibold text-xs uppercase tracking-wider transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-brand-gold" />
+                  <span>Call +91 91450 83945</span>
+                </a>
+
+                <a
+                  href={BUSINESS_DATA.address.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/10 hover:border-white/20 bg-white/[0.02] text-neutral-300 hover:text-white text-xs uppercase tracking-wider font-light transition-colors"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-neutral-400" />
+                  <span>Visit Us on Spine Road, Moshi</span>
                 </a>
               </div>
             </div>
 
-            {/* In-Person Visiting Protocol */}
-            <div className="p-6 rounded-2xl bg-brand-surface border border-brand-border space-y-3">
-              <div className="flex items-center gap-2 text-brand-gold text-xs uppercase tracking-wider font-semibold">
-                <Clock className="w-4 h-4" />
-                <span>Visiting Hours & Walkthroughs</span>
+            {/* Operating Hours Reassurance */}
+            <div className="p-6 rounded-2xl bg-brand-card/70 border border-brand-border/80 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-semibold text-white uppercase tracking-wider">
+                <Clock className="w-4 h-4 text-brand-gold" />
+                <span>Operating Timings & Walkthroughs</span>
               </div>
               <p className="text-xs text-neutral-300 font-light leading-relaxed">
-                The venue office is open <strong className="text-white">Monday through Sunday, 9:00 AM – 11:00 PM</strong>. 
-                Family walk-ins and decorator inspections are warmly welcomed at our Spine Road premises.
+                Open {BUSINESS_DATA.timings.days} from <strong className="text-white font-medium">{BUSINESS_DATA.timings.hours}</strong>. 
+                In-person walkthroughs of both the main hall and dining floor are welcomed daily.
               </p>
-              <div className="pt-2 flex items-center gap-2 text-[11px] text-neutral-400">
-                <MapPin className="w-3.5 h-3.5 text-brand-gold flex-shrink-0" />
-                <span>Plot No. 188, Spine Road, Sector 4, Sant Nagar, Moshi, Pune</span>
+              <div className="pt-2 flex items-center gap-2 text-[11px] text-emerald-400 font-medium">
+                <ShieldCheck className="w-4 h-4" />
+                <span>We typically respond within 15–30 minutes</span>
               </div>
             </div>
+
           </div>
 
         </div>

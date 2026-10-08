@@ -17,8 +17,8 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: "The Venue", href: "#about" },
-    { label: "Spaces & Layout", href: "#spaces" },
+    { label: "Venue", href: "#about" },
+    { label: "Spaces", href: "#spaces" },
     { label: "Celebrations", href: "#events" },
     { label: "Gallery", href: "#gallery" },
     { label: "Facilities", href: "#amenities" },
@@ -30,8 +30,8 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border/60 py-3 shadow-xl'
-            : 'bg-gradient-to-b from-brand-dark/90 via-brand-dark/50 to-transparent py-5'
+            ? 'bg-brand-dark/90 backdrop-blur-md border-b border-brand-gold/15 py-3 shadow-xl'
+            : 'bg-gradient-to-b from-brand-dark/90 via-brand-dark/40 to-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-xs uppercase tracking-widest text-neutral-300 hover:text-brand-gold transition-colors font-medium relative group py-1"
+                  className="text-xs uppercase tracking-luxury text-brand-ivory/80 hover:text-brand-gold transition-colors font-medium relative group py-1"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full" />
@@ -59,11 +59,11 @@ export const Navbar: React.FC = () => {
             <div className="hidden sm:flex items-center gap-4">
               <a
                 href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-300 hover:text-white px-3.5 py-2 rounded border border-neutral-700 hover:border-brand-gold transition-all"
-                title="Call Venue"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-300 hover:text-brand-gold px-3 py-2 rounded-lg border border-transparent hover:border-brand-gold/30 transition-all"
+                title="Call Venue Management"
               >
                 <Phone className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="font-medium">{BUSINESS_DATA.contact.primaryPhone}</span>
+                <span className="font-medium tracking-wide">{BUSINESS_DATA.contact.primaryPhone}</span>
               </a>
 
               <a
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-luxury font-bold text-brand-dark bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark hover:opacity-95 px-5 py-2.5 rounded-xl transition-all shadow-gold-subtle hover:scale-102"
               >
                 <CalendarCheck className="w-3.5 h-3.5" />
-                <span>Reserve Date</span>
+                <span>Check Availability</span>
               </a>
             </div>
 

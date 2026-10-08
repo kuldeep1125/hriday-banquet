@@ -1,4 +1,4 @@
-// [REFACTORED] Ultra-luxury hospitality palette: obsidian noir, champagne gold, imperial burgundy, and editorial typography
+// [REFACTORED] Complete Luxury Redesign Design System Tokens (Warm Charcoal #0F0F0F, Elegant Gold #D4AF37, Soft Ivory #F5F0E8)
 export default {
   content: [
     "./index.html",
@@ -8,27 +8,28 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#08090b',       // Deep Obsidian Noir
-          surface: '#0f1115',    // Velvet Dark Surface
-          card: '#15171d',       // Elevated Dark Container
-          border: '#23262f',     // Quiet Architectural Line
+          dark: '#0f0f0f',       // Deep warm charcoal (never pure black)
+          surface: '#151515',    // Secondary warm charcoal surface
+          card: '#1a1a1a',       // Elevated container card
+          border: '#282828',     // Architectural line
           gold: {
-            DEFAULT: '#c9a86a',  // Refined Champagne Gold (non-brassy)
-            light: '#dfc79b',    // Radiant Champagne Highlight
-            dark: '#9a7a3e',     // Burnished Antique Gold
-            subtle: 'rgba(201, 168, 106, 0.08)',
-            glow: 'rgba(201, 168, 106, 0.22)'
+            DEFAULT: '#d4af37',  // Soft, elegant gold
+            light: '#e6c665',    // Luminous champagne highlight
+            dark: '#a6821e',     // Burnished antique gold
+            muted: '#c9a227',    // Refined muted gold
+            subtle: 'rgba(212, 175, 55, 0.12)',
+            glow: 'rgba(212, 175, 55, 0.22)'
           },
           maroon: {
-            DEFAULT: '#661421',  // Imperial Royal Burgundy
-            light: '#7e1c2b',
-            dark: '#4a0b16',
-            subtle: 'rgba(102, 20, 33, 0.12)'
+            DEFAULT: '#6b1426',  // Ceremonial burgundy
+            light: '#841b31',
+            dark: '#4f0c1a',
+            subtle: 'rgba(107, 20, 38, 0.12)'
           },
           ivory: {
-            DEFAULT: '#fcfaf6',  // Warm Editorial White
-            warm: '#f3ece2',
-            muted: '#a8a297'
+            DEFAULT: '#f5f0e8',  // Warm off-white / soft ivory
+            warm: '#faf6f0',
+            muted: '#a8a29a'     // Refined muted text
           }
         }
       },
@@ -43,9 +44,9 @@ export default {
         tightest: '-.025em'
       },
       boxShadow: {
-        'gold-glow': '0 0 35px -5px rgba(201, 168, 106, 0.18)',
-        'gold-subtle': '0 0 20px -3px rgba(201, 168, 106, 0.12)',
-        'luxury-card': '0 25px 50px -12px rgba(0, 0, 0, 0.75)',
+        'gold-glow': '0 0 35px -5px rgba(212, 175, 55, 0.22)',
+        'gold-subtle': '0 0 20px -3px rgba(212, 175, 55, 0.14)',
+        'luxury-card': '0 20px 45px -15px rgba(0, 0, 0, 0.65)',
       }
     },
   },

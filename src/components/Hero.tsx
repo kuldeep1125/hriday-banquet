@@ -1,12 +1,12 @@
-// [FIXED] Removed unused ShieldCheck import from Hero
+// [REFACTORED] Complete Hero Redesign: Full-bleed cinematic night facade, editorial typography, singular conversion CTAs, and refined 4-pillar trust bar
 import React from 'react';
 import { BUSINESS_DATA } from '../data/businessData';
-import { Star, ArrowRight, Sparkles, Phone } from 'lucide-react';
+import { Star, ArrowRight, Phone, Users, Wind, UtensilsCrossed } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[96vh] lg:min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-dark">
-      {/* Cinematically Graded Real Photography Background */}
+      {/* Full-bleed Cinematically Graded Night Facade */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <picture>
           <source
@@ -33,125 +33,134 @@ export const Hero: React.FC = () => {
             alt={BUSINESS_DATA.gallery[0].alt}
             width={BUSINESS_DATA.gallery[0].width}
             height={BUSINESS_DATA.gallery[0].height}
-            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-[10000ms] ease-out motion-safe:hover:scale-100 filter brightness-[0.62] contrast-[1.12]"
+            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-[12000ms] ease-out motion-safe:hover:scale-100 filter brightness-[0.60] contrast-[1.14]"
             loading="eager"
             fetchPriority="high"
           />
         </picture>
 
-        {/* Multi-layered Architectural Dark Luxury Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-brand-dark/80" />
-        <div className="absolute inset-0 bg-radial-vignette opacity-80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,168,106,0.12),transparent_70%)]" />
+        {/* Subtle Architectural Dark Gradients (not too heavy) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/45 to-brand-dark/70" />
+        <div className="absolute inset-0 bg-radial-vignette opacity-70" />
       </div>
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Subtle Luxury Eyebrow */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-gold/25 bg-black/50 backdrop-blur-md mb-8 shadow-lg">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[11px] uppercase tracking-luxury text-neutral-200 font-medium">
-            Now Booking 2026–2027 Muhurat Dates
-          </span>
-          <span className="text-brand-gold/30">·</span>
-          <span className="text-[11px] text-brand-gold font-semibold flex items-center gap-1">
-            <Star className="w-3 h-3 fill-brand-gold text-brand-gold" />
-            4.1 ★ (970+ Reviews)
+        {/* Subtle Eyebrow Badge */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-black/40 backdrop-blur-md mb-8 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[11px] uppercase tracking-luxury text-brand-ivory font-medium">
+            Now Booking 2026–2027 Auspicious Muhurat Dates
           </span>
         </div>
 
-        {/* Emotionally Resonant Luxury Headline */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[70px] font-normal tracking-tight text-brand-ivory leading-[1.08] max-w-4xl mx-auto">
-          Where Precious Celebrations Turn Into{' '}
+        {/* Editorial High-End Serif Headline */}
+        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[74px] font-normal tracking-tight text-brand-ivory leading-[1.08] max-w-4xl mx-auto">
+          Where Cherished Celebrations Turn Into{' '}
           <span className="italic font-light text-gold-gradient block sm:inline">
             Lifelong Memories.
           </span>
         </h1>
 
-        {/* Marathi Devanagari Sacred Blessing Line */}
-        <p className="mt-3.5 font-serif text-brand-gold/90 text-sm sm:text-base md:text-lg tracking-wider italic font-light">
-          हृदय हॉल — शुभ कार्यासाठी भव्य, मंगलमय आणि परिपूर्ण वास्तू
+        {/* Marathi Devanagari Sacred Sub-Line */}
+        <p className="mt-4 font-serif text-brand-gold text-base sm:text-lg tracking-wider italic font-light">
+          हृदय हॉल — शुभ कार्यासाठी परिपूर्ण, मंगलमय आणि भव्य वास्तू
         </p>
 
-        {/* Quietly Confident Hospitality Narrative */}
+        {/* Short, Emotional Narrative Sub-Text (Max 2 lines) */}
         <p className="mt-6 text-sm sm:text-base md:text-lg text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed">
-          Situated on Spine Road, Sant Nagar, Moshi. An air-conditioned grand celebration venue 
-          featuring an elevated ceremony stage, separate banquet dining floor, and dedicated parking 
-          for weddings, sakharpuda, and milestone family celebrations of up to 300 guests.
+          Pune's distinguished celebration venue on Spine Road, Moshi. An air-conditioned grand hall 
+          and separate banquet dining floor tailored for weddings, sakharpuda, and family milestones up to 300 guests.
         </p>
 
-        {/* Refined Conversion Action Cluster */}
+        {/* Primary & Secondary Conversion CTAs */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#inquiry"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark text-xs uppercase tracking-luxury font-bold shadow-gold-glow hover:shadow-brand-gold/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] w-full sm:w-auto"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark text-xs uppercase tracking-luxury font-bold shadow-gold-glow hover:shadow-brand-gold/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] w-full sm:w-auto"
           >
-            <span>Check Auspicious Date Availability</span>
+            <span>Check Date Availability</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
 
           <a
-            href="#gallery"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl border border-white/15 bg-white/[0.04] backdrop-blur-md text-white hover:text-brand-gold hover:border-brand-gold/40 text-xs uppercase tracking-luxury font-semibold transition-all duration-300 w-full sm:w-auto hover:bg-white/[0.08]"
+            href="#spaces"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl border border-brand-gold/30 hover:border-brand-gold/60 bg-white/[0.04] backdrop-blur-md text-brand-ivory hover:text-brand-gold text-xs uppercase tracking-luxury font-semibold transition-all duration-300 w-full sm:w-auto hover:bg-white/[0.08]"
           >
-            <Sparkles className="w-4 h-4 text-brand-gold" />
-            <span>View Authentic Gallery</span>
+            <span>Explore the Venue</span>
           </a>
         </div>
 
-        {/* Direct Contact Hotline Prompt */}
-        <div className="mt-5 flex items-center justify-center gap-2 text-xs text-neutral-400 font-light">
-          <Phone className="w-3.5 h-3.5 text-brand-gold" />
-          <span>Direct Host Hotline:</span>
+        {/* Small Trust Line Under CTAs */}
+        <div className="mt-6 flex items-center justify-center gap-2 text-xs text-brand-ivory/80 font-light">
+          <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+          <span className="font-medium text-brand-ivory">4.1 ★</span>
+          <span className="text-neutral-500">·</span>
+          <span>970+ Google Reviews</span>
+          <span className="text-neutral-500">·</span>
+          <span>Spine Road, Moshi</span>
+          <span className="text-neutral-500">·</span>
           <a
             href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`}
-            className="text-brand-gold hover:underline font-medium ml-0.5"
+            className="text-brand-gold hover:underline font-medium inline-flex items-center gap-1 ml-1"
           >
-            {BUSINESS_DATA.contact.primaryPhone}
-          </a>
-          <span className="text-neutral-600">·</span>
-          <a
-            href={`tel:${BUSINESS_DATA.contact.secondaryPhoneRaw}`}
-            className="text-neutral-300 hover:text-brand-gold font-medium"
-          >
-            {BUSINESS_DATA.contact.secondaryPhone}
+            <Phone className="w-3 h-3" />
+            <span>{BUSINESS_DATA.contact.primaryPhone}</span>
           </a>
         </div>
 
-        {/* Museum-Grade Architectural Distinction Ribbon */}
-        <div className="mt-16 pt-10 border-t border-brand-border/60 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
-          <div className="p-4 rounded-xl bg-brand-surface/60 backdrop-blur-md border border-brand-border/70 hover:border-brand-gold/30 transition-all">
-            <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block mb-1">
-              Guest Capacity
-            </span>
-            <p className="text-sm font-medium text-white">{BUSINESS_DATA.capacity.theatreSeating}</p>
-            <p className="text-[11px] text-neutral-400 mt-0.5">Up to 300 floating reception</p>
+        {/* [REFACTORED] Key Highlights Bar (Just Below Hero) */}
+        <div className="mt-16 pt-10 border-t border-brand-gold/15 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
+          
+          {/* Card 1: Capacity */}
+          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
+              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <Users className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Capacity</span>
+            </div>
+            <p className="text-base sm:text-lg font-serif font-normal text-white">180 – 200 Seated</p>
+            <p className="text-xs text-neutral-400 mt-1 font-light">Up to 300 floating reception</p>
           </div>
 
-          <div className="p-4 rounded-xl bg-brand-surface/60 backdrop-blur-md border border-brand-border/70 hover:border-brand-gold/30 transition-all">
-            <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block mb-1">
-              Dining Separation
-            </span>
-            <p className="text-sm font-medium text-white">Separate Banquet Floor</p>
-            <p className="text-[11px] text-neutral-400 mt-0.5">80–100 per seating batch</p>
+          {/* Card 2: Climate */}
+          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
+              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <Wind className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Climate</span>
+            </div>
+            <p className="text-base sm:text-lg font-serif font-normal text-white">Full Air Conditioning</p>
+            <p className="text-xs text-neutral-400 mt-1 font-light">Main hall & ceremony stage</p>
           </div>
 
-          <div className="p-4 rounded-xl bg-brand-surface/60 backdrop-blur-md border border-brand-border/70 hover:border-brand-gold/30 transition-all">
-            <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block mb-1">
-              Power Reliability
-            </span>
-            <p className="text-sm font-medium text-white">100% Generator Backup</p>
-            <p className="text-[11px] text-neutral-400 mt-0.5">Zero ceremony interruption</p>
+          {/* Card 3: Dining */}
+          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
+              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <UtensilsCrossed className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Dining Floor</span>
+            </div>
+            <p className="text-base sm:text-lg font-serif font-normal text-white">Separate Dining Floor</p>
+            <p className="text-xs text-neutral-400 mt-1 font-light">80–100 per seating batch</p>
           </div>
 
-          <div className="p-4 rounded-xl bg-brand-surface/60 backdrop-blur-md border border-brand-border/70 hover:border-brand-gold/30 transition-all">
-            <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block mb-1">
-              On-Site Parking
-            </span>
-            <p className="text-sm font-medium text-white">Dedicated ~90 Car Area</p>
-            <p className="text-[11px] text-neutral-400 mt-0.5">Wide Spine Road approach</p>
+          {/* Card 4: Trust Rating */}
+          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
+              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <Star className="w-4 h-4 fill-brand-gold" />
+              </div>
+              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Verified Rating</span>
+            </div>
+            <p className="text-base sm:text-lg font-serif font-normal text-white">4.1 / 5.0 Google Rating</p>
+            <p className="text-xs text-neutral-400 mt-1 font-light">970+ local verified reviews</p>
           </div>
+
         </div>
 
       </div>

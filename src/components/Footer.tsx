@@ -1,4 +1,4 @@
-// [REFACTORED] Footer component with verified business information, authentic photo strip, local SEO context, and quick links
+// [REFACTORED] Footer - 4-column luxury hospitality layout matching redesign brief with authentic photo strip and verified business NAP
 import React from 'react';
 import { BrandLogo } from './BrandLogo';
 import { BUSINESS_DATA } from '../data/businessData';
@@ -10,33 +10,33 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-brand-dark border-t border-brand-border/80 pt-14 pb-12 text-neutral-400">
+    <footer className="bg-brand-dark border-t border-brand-border/80 pt-16 pb-12 text-neutral-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* [ADDED] Authentic Celebration Moments Photo Strip */}
-        <div className="mb-12 pb-10 border-b border-brand-border/60">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+        {/* Authentic Celebration Moments Photo Strip */}
+        <div className="mb-14 pb-12 border-b border-brand-border/60">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-brand-gold" />
-              <span className="text-xs uppercase tracking-wider font-semibold text-neutral-200">
+              <span className="text-xs uppercase tracking-luxury font-semibold text-neutral-200">
                 Real Moments & Spaces at Hriday Hall
               </span>
             </div>
             <a
               href="#gallery"
-              className="text-xs text-brand-gold hover:underline flex items-center gap-1 font-medium group"
+              className="text-xs text-brand-gold hover:text-brand-gold-light flex items-center gap-1 font-medium group transition-colors"
             >
               <span>Explore All 10 Full HD Venue Photographs</span>
-              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3.5">
             {BUSINESS_DATA.gallery.slice(0, 6).map((img) => (
               <a
                 key={img.id}
                 href="#gallery"
-                className="group relative block aspect-square rounded-lg overflow-hidden border border-brand-border/60 bg-brand-surface focus:outline-none focus:ring-2 focus:ring-brand-gold/60"
+                className="group relative block aspect-square rounded-xl overflow-hidden border border-brand-border/70 hover:border-brand-gold/60 bg-brand-surface focus:outline-none focus:ring-2 focus:ring-brand-gold/60 transition-all shadow-sm"
                 title={img.caption}
               >
                 <picture>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
                     height={240}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 filter brightness-[0.92] group-hover:brightness-100"
                   />
                 </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2.5">
@@ -61,8 +61,8 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-brand-border/60">
+        {/* Main 4-Column Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-brand-border/60">
           
           {/* Col 1: Brand & Identity (4 Cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -76,51 +76,78 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-2 pt-2 text-xs text-brand-gold font-medium">
               <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
-              <span>4.1 Rating on Google (970+ Reviews)</span>
+              <span>4.1 Rating on Google (970+ Verified Reviews)</span>
             </div>
+            <p className="text-[11px] text-neutral-400 font-light">
+              Zero stock or synthetic photography · Real venue premises
+            </p>
           </div>
 
-          {/* Col 2: Navigation Links (3 Cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
-              Explore Venue
+          {/* Col 2: Spaces (2.5 Cols) */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-semibold uppercase tracking-luxury text-white">
+              Venue Spaces
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#about" className="hover:text-brand-gold transition-colors">The Venue & Philosophy</a>
+                <a href="#spaces" className="hover:text-brand-gold transition-colors">Main Banquet Hall</a>
               </li>
               <li>
-                <a href="#spaces" className="hover:text-brand-gold transition-colors">Main Hall & Dining Floor</a>
+                <a href="#spaces" className="hover:text-brand-gold transition-colors">Raised Ceremony Stage</a>
               </li>
               <li>
-                <a href="#events" className="hover:text-brand-gold transition-colors">Weddings & Sakharpuda</a>
+                <a href="#spaces" className="hover:text-brand-gold transition-colors">Dedicated Dining Floor</a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-brand-gold transition-colors">Authentic Gallery</a>
+                <a href="#spaces" className="hover:text-brand-gold transition-colors">Parking Compound (~90 Cars)</a>
               </li>
               <li>
-                <a href="#amenities" className="hover:text-brand-gold transition-colors">Amenities & Parking</a>
+                <a href="#amenities" className="hover:text-brand-gold transition-colors">Private Green Rooms</a>
               </li>
               <li>
-                <a href="#location" className="hover:text-brand-gold transition-colors">Location & Directions</a>
-              </li>
-              <li>
-                <a href="#inquiry" className="hover:text-brand-gold transition-colors">Enquire Availability</a>
+                <a href="#amenities" className="hover:text-brand-gold transition-colors">Generator Backup</a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Verified Contact & Timings (5 Cols) */}
-          <div className="lg:col-span-5 space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
-              Verified Business Address
+          {/* Col 3: Celebrations (2.5 Cols) */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-semibold uppercase tracking-luxury text-white">
+              Celebrations
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <a href="#events" className="hover:text-brand-gold transition-colors">Weddings & Receptions (लग्नसमारंभ)</a>
+              </li>
+              <li>
+                <a href="#events" className="hover:text-brand-gold transition-colors">Sakharpuda & Engagements (साखरपुडा)</a>
+              </li>
+              <li>
+                <a href="#events" className="hover:text-brand-gold transition-colors">Pre-Wedding (हळदी, संगीत, मेहंदी)</a>
+              </li>
+              <li>
+                <a href="#events" className="hover:text-brand-gold transition-colors">Naming & Dohale Jevan (डोहाळे जेवण)</a>
+              </li>
+              <li>
+                <a href="#events" className="hover:text-brand-gold transition-colors">Birthdays & Anniversaries (वाढदिवस)</a>
+              </li>
+              <li>
+                <a href="#events" className="hover:text-brand-gold transition-colors">Corporate Assemblies (कॉर्पोरेट)</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Contact & Location (3 Cols) */}
+          <div className="lg:col-span-3 space-y-3.5">
+            <h4 className="text-xs font-semibold uppercase tracking-luxury text-white">
+              Contact & Location
             </h4>
 
             <div className="space-y-2.5 text-xs text-neutral-300">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
                 <span>
-                  {BUSINESS_DATA.address.fullFormatted}
+                  {BUSINESS_DATA.address.plot}, {BUSINESS_DATA.address.road}, {BUSINESS_DATA.address.area}, Moshi, Pune 412105
                 </span>
               </div>
 
@@ -131,7 +158,7 @@ export const Footer: React.FC = () => {
 
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                <div className="space-x-3">
+                <div className="space-x-2">
                   <a href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`} className="hover:text-brand-gold font-medium">
                     {BUSINESS_DATA.contact.primaryPhone}
                   </a>
@@ -150,7 +177,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="text-emerald-400 hover:text-emerald-300 underline font-medium"
                 >
-                  Direct WhatsApp Inquiries (+91 91450 83945)
+                  WhatsApp (+91 91450 83945)
                 </a>
               </div>
             </div>
@@ -185,12 +212,12 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="text-center sm:text-right">
-            Official digital presence for Hriday Banquet Hall, Moshi, Pimpri-Chinchwad, Pune.
+            Authentic celebration venue on Spine Road, Moshi, Pune · PCNTDA Sector 4
           </div>
 
           <button
             onClick={scrollToTop}
-            className="p-2 rounded bg-brand-surface hover:bg-brand-card text-neutral-300 hover:text-white border border-brand-border transition-colors flex items-center gap-1.5"
+            className="p-2 rounded-xl bg-brand-surface hover:bg-brand-card text-neutral-300 hover:text-white border border-brand-border transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-1 focus:ring-brand-gold"
             aria-label="Back to top"
           >
             <span>Top</span>
