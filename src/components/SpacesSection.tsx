@@ -123,11 +123,11 @@ export const SpacesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Tab Buttons */}
-        <div className="flex flex-wrap gap-2.5 pb-6 border-b border-brand-border/60 mb-10">
+        {/* Tab Buttons (Responsive compact sizing on mobile) */}
+        <div className="flex flex-wrap gap-2 sm:gap-2.5 pb-5 sm:pb-6 border-b border-brand-border/60 mb-8 sm:mb-10">
           <button
             onClick={() => setActiveTab('hall')}
-            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
+            className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'hall'
                 ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
@@ -138,7 +138,7 @@ export const SpacesSection: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('stage')}
-            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
+            className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'stage'
                 ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
@@ -149,7 +149,7 @@ export const SpacesSection: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('dining')}
-            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
+            className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'dining'
                 ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
@@ -160,7 +160,7 @@ export const SpacesSection: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('facilities')}
-            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
+            className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'facilities'
                 ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
                 : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'

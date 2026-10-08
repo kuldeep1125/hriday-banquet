@@ -92,10 +92,12 @@ export const Hero: React.FC = () => {
           </a>
         </div>
 
-        {/* Small Trust Line Under CTAs */}
-        <div className="mt-6 flex items-center justify-center gap-2 text-xs text-brand-ivory/80 font-light">
-          <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
-          <span className="font-medium text-brand-ivory">4.1 ★</span>
+        {/* Small Trust Line Under CTAs (Responsive wrap) */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs text-brand-ivory/80 font-light text-center">
+          <span className="inline-flex items-center gap-1">
+            <Star className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+            <span className="font-medium text-brand-ivory">4.1 ★</span>
+          </span>
           <span className="text-neutral-500">·</span>
           <span>970+ Google Reviews</span>
           <span className="text-neutral-500">·</span>
@@ -103,7 +105,7 @@ export const Hero: React.FC = () => {
           <span className="text-neutral-500">·</span>
           <a
             href={`tel:${BUSINESS_DATA.contact.primaryPhoneRaw}`}
-            className="text-brand-gold hover:underline font-medium inline-flex items-center gap-1 ml-1"
+            className="text-brand-gold hover:underline font-medium inline-flex items-center gap-1 ml-1 whitespace-nowrap"
           >
             <Phone className="w-3 h-3" />
             <span>{BUSINESS_DATA.contact.primaryPhone}</span>
@@ -111,54 +113,54 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* [REFACTORED] Key Highlights Bar (Just Below Hero) */}
-        <div className="mt-16 pt-10 border-t border-brand-gold/15 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
+        <div className="mt-14 sm:mt-16 pt-8 sm:pt-10 border-t border-brand-gold/15 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 text-left">
           
           {/* Card 1: Capacity */}
-          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
-            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
-              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
-                <Users className="w-4 h-4" />
+          <div className="p-4 sm:p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2 sm:gap-2.5 text-brand-gold mb-2.5 sm:mb-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Capacity</span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Capacity</span>
             </div>
-            <p className="text-base sm:text-lg font-serif font-normal text-white">180 – 200 Seated</p>
-            <p className="text-xs text-neutral-400 mt-1 font-light">Up to 300 floating reception</p>
+            <p className="text-sm sm:text-base lg:text-lg font-serif font-normal text-white">180 – 200 Seated</p>
+            <p className="text-[11px] sm:text-xs text-neutral-400 mt-1 font-light">Up to 300 floating reception</p>
           </div>
 
           {/* Card 2: Climate */}
-          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
-            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
-              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
-                <Wind className="w-4 h-4" />
+          <div className="p-4 sm:p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2 sm:gap-2.5 text-brand-gold mb-2.5 sm:mb-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <Wind className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Climate</span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Climate</span>
             </div>
-            <p className="text-base sm:text-lg font-serif font-normal text-white">Full Air Conditioning</p>
-            <p className="text-xs text-neutral-400 mt-1 font-light">Main hall & ceremony stage</p>
+            <p className="text-sm sm:text-base lg:text-lg font-serif font-normal text-white">Full Air Conditioning</p>
+            <p className="text-[11px] sm:text-xs text-neutral-400 mt-1 font-light">Main hall & ceremony stage</p>
           </div>
 
           {/* Card 3: Dining */}
-          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
-            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
-              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
-                <UtensilsCrossed className="w-4 h-4" />
+          <div className="p-4 sm:p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2 sm:gap-2.5 text-brand-gold mb-2.5 sm:mb-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <UtensilsCrossed className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Dining Floor</span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Dining Floor</span>
             </div>
-            <p className="text-base sm:text-lg font-serif font-normal text-white">Separate Dining Floor</p>
-            <p className="text-xs text-neutral-400 mt-1 font-light">80–100 per seating batch</p>
+            <p className="text-sm sm:text-base lg:text-lg font-serif font-normal text-white">Separate Dining Floor</p>
+            <p className="text-[11px] sm:text-xs text-neutral-400 mt-1 font-light">80–100 per seating batch</p>
           </div>
 
           {/* Card 4: Trust Rating */}
-          <div className="p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
-            <div className="flex items-center gap-2.5 text-brand-gold mb-3">
-              <div className="w-8 h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
-                <Star className="w-4 h-4 fill-brand-gold" />
+          <div className="p-4 sm:p-6 rounded-2xl bg-brand-card/85 backdrop-blur-md border border-brand-gold/20 hover:border-brand-gold/45 transition-all shadow-luxury-card group">
+            <div className="flex items-center gap-2 sm:gap-2.5 text-brand-gold mb-2.5 sm:mb-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-black/40 flex items-center justify-center border border-brand-gold/25">
+                <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-brand-gold" />
               </div>
-              <span className="text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Verified Rating</span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-luxury font-semibold text-brand-gold">Verified Rating</span>
             </div>
-            <p className="text-base sm:text-lg font-serif font-normal text-white">4.1 / 5.0 Google Rating</p>
-            <p className="text-xs text-neutral-400 mt-1 font-light">970+ local verified reviews</p>
+            <p className="text-sm sm:text-base lg:text-lg font-serif font-normal text-white">4.1 / 5.0 Rating</p>
+            <p className="text-[11px] sm:text-xs text-neutral-400 mt-1 font-light">970+ local verified reviews</p>
           </div>
 
         </div>

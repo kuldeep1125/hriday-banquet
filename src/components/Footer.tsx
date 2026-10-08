@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-brand-dark border-t border-brand-border/80 pt-16 pb-12 text-neutral-400">
+    <footer className="bg-brand-dark border-t border-brand-border/80 pt-16 pb-28 lg:pb-14 text-neutral-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Authentic Celebration Moments Photo Strip */}

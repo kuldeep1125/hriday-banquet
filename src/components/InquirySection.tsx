@@ -242,15 +242,15 @@ Please confirm date availability and rental/package details.`;
                       </div>
                     </div>
 
-                    <div className="pt-4 flex items-center justify-between">
+                    <div className="pt-4 flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3.5">
                       <span className="text-[11px] text-neutral-400 font-light flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-brand-gold" />
-                        <span>Typically response in 15–30 mins</span>
+                        <Clock className="w-3.5 h-3.5 text-brand-gold flex-shrink-0" />
+                        <span>Typically responds in 15–30 mins</span>
                       </span>
 
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-gold-subtle hover:scale-102"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-gold-subtle hover:scale-102 w-full sm:w-auto"
                       >
                         <span>Continue to Host Details</span>
                         <ArrowRight className="w-4 h-4" />
@@ -328,19 +328,19 @@ Please confirm date availability and rental/package details.`;
                       />
                     </div>
 
-                    <div className="pt-4 flex items-center justify-between">
+                    <div className="pt-4 flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3.5">
                       <button
                         type="button"
                         onClick={() => setCurrentStep(1)}
-                        className="text-xs text-neutral-400 hover:text-white underline"
+                        className="text-xs text-neutral-400 hover:text-white underline text-center sm:text-left py-1"
                       >
                         ← Back to event details
                       </button>
 
-                      <div className="flex gap-3">
+                      <div className="w-full sm:w-auto">
                         <button
                           type="submit"
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-gold-subtle hover:scale-102"
+                          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold text-xs uppercase tracking-wider transition-all shadow-gold-subtle hover:scale-102"
                         >
                           <Sparkles className="w-4 h-4" />
                           <span>Request Availability</span>

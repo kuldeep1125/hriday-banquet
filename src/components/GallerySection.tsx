@@ -100,13 +100,13 @@ export const GallerySection: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap gap-2.5 pb-8 border-b border-brand-border/60 mb-12">
+        {/* Category Filters (Mobile responsive spacing) */}
+        <div className="flex flex-wrap gap-2 sm:gap-2.5 pb-6 sm:pb-8 border-b border-brand-border/60 mb-8 sm:mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
                 activeCategory === cat.id
                   ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
                   : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40 hover:bg-brand-card'

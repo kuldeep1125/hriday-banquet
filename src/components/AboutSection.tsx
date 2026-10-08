@@ -44,8 +44,8 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Floating Trust Badge on Image (Desktop) */}
-            <div className="hidden sm:flex absolute -bottom-6 -right-6 p-4 rounded-xl bg-brand-surface/95 backdrop-blur-md border border-brand-gold/30 shadow-luxury-card items-center gap-3.5">
+            {/* Floating Trust Badge on Image (Responsive positioning) */}
+            <div className="hidden sm:flex absolute bottom-4 right-4 lg:-bottom-6 lg:-right-6 p-3.5 sm:p-4 rounded-xl bg-brand-surface/95 backdrop-blur-md border border-brand-gold/30 shadow-luxury-card items-center gap-3.5">
               <div className="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center border border-brand-gold/40 text-brand-gold">
                 <Star className="w-5 h-5 fill-brand-gold text-brand-gold" />
               </div>

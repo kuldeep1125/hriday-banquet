@@ -1,4 +1,4 @@
-// [ADDED] BrandLogo component replicating the authentic logo mark of Hriday Hall
+// [REFACTORED] BrandLogo - Bulletproof responsiveness with flex-shrink protection and adaptive subtext for small screens
 import React from 'react';
 
 interface BrandLogoProps {
@@ -17,9 +17,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   const subtextColor = variant === "light" ? "#a8a29a" : "#525252";
 
   return (
-    <div className={`flex items-center gap-3 select-none ${className}`}>
+    <div className={`flex items-center gap-2.5 sm:gap-3 select-none flex-shrink-0 ${className}`}>
       {/* Authentic Heart Emblem inspired by real venue signage */}
-      <div className="relative flex-shrink-0 w-10 h-10 rounded-full border border-brand-gold/40 bg-brand-surface/80 flex items-center justify-center p-2 shadow-sm">
+      <div className="relative flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-brand-gold/40 bg-brand-surface/80 flex items-center justify-center p-1.5 sm:p-2 shadow-sm">
         <svg
           viewBox="0 0 100 100"
           className="w-full h-full"
@@ -44,21 +44,21 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       </div>
 
       {/* Brand Typography */}
-      <div className="flex flex-col text-left">
-        <div className="flex items-baseline gap-2">
+      <div className="flex flex-col text-left whitespace-nowrap">
+        <div className="flex items-baseline gap-1.5 sm:gap-2">
           <span 
-            className="font-serif font-bold text-xl tracking-tight leading-none"
+            className="font-serif font-bold text-lg sm:text-xl tracking-tight leading-none"
             style={{ color: textColor }}
           >
             Hriday Hall
           </span>
-          <span className="text-xs font-semibold tracking-wider text-brand-gold uppercase">
+          <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-brand-gold uppercase">
             हृदय
           </span>
         </div>
         {showSubtext && (
           <span 
-            className="text-[10px] uppercase tracking-widest font-medium mt-0.5"
+            className="hidden xs:inline-block text-[9px] sm:text-[10px] uppercase tracking-widest font-medium mt-0.5"
             style={{ color: subtextColor }}
           >
             Banquet & Event Venue · Moshi
