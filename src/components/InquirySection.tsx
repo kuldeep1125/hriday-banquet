@@ -57,21 +57,21 @@ Please confirm date availability and rental/package details.`;
   };
 
   return (
-    <section id="inquiry" className="py-24 sm:py-28 bg-brand-surface relative border-t border-brand-border/40">
+    <section id="inquiry" className="py-28 sm:py-36 bg-brand-surface relative border-t border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest font-semibold mb-3">
-            <CalendarCheck className="w-3.5 h-3.5" />
-            <span>Date Inquiries & Booking Consultation</span>
+        <div className="max-w-3xl mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/20 bg-brand-surface/80 text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
+            <CalendarCheck className="w-3 h-3 text-brand-gold" />
+            <span>Date Availability & Private Walkthrough</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-ivory tracking-tight">
-            Reserve Your Auspicious Date
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-ivory tracking-tight leading-[1.15]">
+            Plan Your Auspicious Celebration.
           </h2>
-          <p className="mt-3 text-base text-neutral-300 font-light leading-relaxed">
-            Connect directly with the venue management team on Spine Road. Confirm date availability, 
-            schedule an in-person walkthrough of the hall and dining floor, or receive a transparent quote.
+          <p className="mt-5 text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
+            Connect directly with the venue management team on Spine Road. Confirm auspicious date availability, 
+            schedule an in-person walkthrough of the hall and dining floor, or receive an exact transparent quotation.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ Please confirm date availability and rental/package details.`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Progressive Consultation Form */}
-          <div className="lg:col-span-7 bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-8 shadow-2xl">
+          <div className="lg:col-span-7 bg-brand-card rounded-2xl border-luxury p-8 sm:p-10 shadow-luxury-card">
             {submitted ? (
               <div className="py-10 text-center space-y-4 animate-fadeIn">
                 <div className="w-16 h-16 rounded-full bg-emerald-950/80 border border-emerald-600/60 text-emerald-400 mx-auto flex items-center justify-center shadow-lg">

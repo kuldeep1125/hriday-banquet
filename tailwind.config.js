@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// [REFACTORED] Ultra-luxury hospitality palette: obsidian noir, champagne gold, imperial burgundy, and editorial typography
 export default {
   content: [
     "./index.html",
@@ -8,26 +8,27 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#0d1113',
-          surface: '#151b1e',
-          card: '#1d2529',
-          border: '#2a343a',
+          dark: '#08090b',       // Deep Obsidian Noir
+          surface: '#0f1115',    // Velvet Dark Surface
+          card: '#15171d',       // Elevated Dark Container
+          border: '#23262f',     // Quiet Architectural Line
           gold: {
-            DEFAULT: '#c69248',
-            light: '#d9a65c',
-            dark: '#a87532',
-            subtle: 'rgba(198, 146, 72, 0.12)'
+            DEFAULT: '#c9a86a',  // Refined Champagne Gold (non-brassy)
+            light: '#dfc79b',    // Radiant Champagne Highlight
+            dark: '#9a7a3e',     // Burnished Antique Gold
+            subtle: 'rgba(201, 168, 106, 0.08)',
+            glow: 'rgba(201, 168, 106, 0.22)'
           },
           maroon: {
-            DEFAULT: '#851b2e',
-            light: '#9e2238',
-            dark: '#661221',
-            subtle: 'rgba(133, 27, 46, 0.1)'
+            DEFAULT: '#661421',  // Imperial Royal Burgundy
+            light: '#7e1c2b',
+            dark: '#4a0b16',
+            subtle: 'rgba(102, 20, 33, 0.12)'
           },
           ivory: {
-            DEFAULT: '#faf8f5',
-            warm: '#f3efe8',
-            muted: '#e5ded3'
+            DEFAULT: '#fcfaf6',  // Warm Editorial White
+            warm: '#f3ece2',
+            muted: '#a8a297'
           }
         }
       },
@@ -37,8 +38,14 @@ export default {
         sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       letterSpacing: {
-        widest: '.2em',
+        widest: '.22em',
+        luxury: '.18em',
         tightest: '-.025em'
+      },
+      boxShadow: {
+        'gold-glow': '0 0 35px -5px rgba(201, 168, 106, 0.18)',
+        'gold-subtle': '0 0 20px -3px rgba(201, 168, 106, 0.12)',
+        'luxury-card': '0 25px 50px -12px rgba(0, 0, 0, 0.75)',
       }
     },
   },

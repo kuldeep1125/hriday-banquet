@@ -9,40 +9,41 @@
   }
   
   body {
-    background-color: #0d1113;
-    color: #e5e5e5;
+    background-color: #08090b;
+    color: #e2dfd9;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
   }
 
   ::selection {
-    background-color: #c69248;
-    color: #0d1113;
+    background-color: #c9a86a;
+    color: #08090b;
   }
 }
 
-/* Subtle editorial scrollbar */
+/* [ADDED] Subtle luxury editorial scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d1113;
+  background: #08090b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232c31;
+  background: #1e2129;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c69248;
+  background: #c9a86a;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -51,9 +52,33 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.25s ease-out forwards;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* [ADDED] Luxury Hospitality Utility Classes */
+.bg-ambient-luxury {
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(201, 168, 106, 0.07) 0%, transparent 65%),
+    radial-gradient(circle at 100% 40%, rgba(102, 20, 33, 0.05) 0%, transparent 50%),
+    #08090b;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f4ece0 0%, #dfc79b 40%, #c9a86a 70%, #9a7a3e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-luxury {
+  border: 1px solid rgba(201, 168, 106, 0.16);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.border-luxury:hover {
+  border-color: rgba(201, 168, 106, 0.36);
+  box-shadow: 0 0 25px -5px rgba(201, 168, 106, 0.15);
 }
 
 .bg-radial-vignette {
-  background: radial-gradient(circle at center, transparent 30%, rgba(13, 17, 19, 0.95) 100%);
+  background: radial-gradient(circle at center, transparent 35%, rgba(8, 9, 11, 0.95) 100%);
 }

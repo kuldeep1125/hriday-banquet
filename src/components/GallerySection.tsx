@@ -54,36 +54,36 @@ export const GallerySection: React.FC = () => {
   }, [lightboxIndex, handleNext, handlePrev]);
 
   return (
-    <section id="gallery" className="py-24 sm:py-28 bg-brand-surface relative border-t border-brand-border/40">
+    <section id="gallery" className="py-28 sm:py-36 bg-brand-surface relative border-t border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest font-semibold mb-3">
-              <Camera className="w-3.5 h-3.5" />
-              <span>Authentic Venue Photography</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/20 bg-brand-surface/80 text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
+              <Camera className="w-3 h-3 text-brand-gold" />
+              <span>Authentic Venue Portfolio</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-ivory tracking-tight">
-              An Honest Look Inside Hriday Hall
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-ivory tracking-tight leading-[1.15]">
+              Curated Photographic Spaces of Hriday Hall.
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-neutral-300 max-w-md mt-4 md:mt-0 font-light leading-relaxed">
-            Every photograph is an authentic representation of the actual premises, real stage setups, 
-            and dining service on Spine Road, Moshi. Zero stock images or artificial architectural renders.
+            Every frame is captured from the real premises on Spine Road, Moshi. 
+            Featuring genuine stage decorations, ceremony seating, and banquet buffet setups with zero stock or synthetic rendering.
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 pb-6 border-b border-brand-border mb-10">
+        <div className="flex flex-wrap gap-2.5 pb-8 border-b border-brand-border/60 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-lg text-xs uppercase tracking-wider font-medium transition-all ${
+              className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
                 activeCategory === cat.id
-                  ? 'bg-brand-gold text-brand-dark font-bold shadow-md'
-                  : 'bg-brand-card/80 text-neutral-300 hover:text-white border border-brand-border hover:border-brand-gold/40'
+                  ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
+                  : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40 hover:bg-brand-card'
               }`}
             >
               {cat.label}
@@ -92,7 +92,7 @@ export const GallerySection: React.FC = () => {
         </div>
 
         {/* [REFACTORED] Editorial Asymmetric Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-7">
           {filteredImages.map((image, idx) => {
             // Give the first 2 images on the 'all' tab an expansive editorial span
             const isFeatured = activeCategory === 'all' && (idx === 0 || idx === 1);
@@ -102,7 +102,7 @@ export const GallerySection: React.FC = () => {
               <div
                 key={image.id}
                 onClick={() => openLightbox(idx)}
-                className={`group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-card shadow-lg flex flex-col justify-between hover:border-brand-gold/60 transition-all duration-300 ${gridColSpan}`}
+                className={`group relative cursor-pointer overflow-hidden rounded-2xl border-luxury bg-brand-card shadow-luxury-card flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 ${gridColSpan}`}
               >
                 {/* Image Frame with Aspect Preservation */}
                 <div className={`relative ${isFeatured ? 'aspect-[16/10]' : 'aspect-[4/3] sm:aspect-[16/11]'} overflow-hidden bg-neutral-900`}>
@@ -115,32 +115,32 @@ export const GallerySection: React.FC = () => {
                       alt={image.alt}
                       width={image.width}
                       height={image.height}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
+                      className="w-full h-full object-cover object-center group-hover:scale-106 transition-transform duration-700 ease-out filter brightness-[0.92] group-hover:brightness-100"
                       loading="lazy"
                     />
                   </picture>
 
                   {/* Hover Overlay with Inspect Icon */}
-                  <div className="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="p-3 rounded-full bg-brand-gold text-brand-dark shadow-xl">
+                  <div className="absolute inset-0 bg-brand-dark/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                    <div className="p-3.5 rounded-full bg-brand-gold text-brand-dark shadow-gold-glow transform scale-90 group-hover:scale-100 transition-transform">
                       <Maximize2 className="w-4 h-4" />
                     </div>
                   </div>
 
                   {/* Badges Overlay */}
-                  <div className="absolute top-3 left-3 flex items-center gap-2">
-                    <span className="bg-brand-dark/85 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] uppercase tracking-wider text-neutral-200 font-semibold border border-white/10">
+                  <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
+                    <span className="bg-brand-dark/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] uppercase tracking-luxury text-neutral-200 font-semibold border border-white/10 shadow-md">
                       {image.category}
                     </span>
-                    <span className="bg-brand-gold text-brand-dark px-2 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase">
-                      Full HD
+                    <span className="bg-brand-gold text-brand-dark px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-luxury uppercase shadow-sm">
+                      Master 2K
                     </span>
                   </div>
                 </div>
 
                 {/* Caption */}
-                <div className="p-4 bg-brand-card border-t border-brand-border/60">
-                  <p className="text-xs text-neutral-300 font-normal leading-relaxed line-clamp-2">
+                <div className="p-5 bg-brand-card/95 border-t border-brand-border/60">
+                  <p className="text-xs text-neutral-300 font-light leading-relaxed line-clamp-2">
                     {image.caption}
                   </p>
                 </div>

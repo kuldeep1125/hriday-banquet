@@ -68,10 +68,10 @@ export const Navbar: React.FC = () => {
 
               <a
                 href="#inquiry"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-brand-dark bg-brand-gold hover:bg-brand-gold-light px-4 py-2 rounded transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-luxury font-bold text-brand-dark bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark hover:opacity-95 px-5 py-2.5 rounded-xl transition-all shadow-gold-subtle hover:scale-102"
               >
                 <CalendarCheck className="w-3.5 h-3.5" />
-                <span>Enquire Date</span>
+                <span>Reserve Date</span>
               </a>
             </div>
 

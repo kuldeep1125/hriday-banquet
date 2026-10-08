@@ -91,34 +91,34 @@ export const SpacesSection: React.FC = () => {
   const currentSpace = spaces[activeTab];
 
   return (
-    <section id="spaces" className="py-24 bg-brand-surface relative border-t border-brand-border/40">
+    <section id="spaces" className="py-28 sm:py-36 bg-brand-surface relative border-t border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest font-semibold mb-3">
-              <Layers className="w-3.5 h-3.5" />
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/20 bg-brand-surface/80 text-brand-gold text-[10px] uppercase tracking-luxury font-semibold mb-4">
+              <Layers className="w-3 h-3 text-brand-gold" />
               <span>Architectural Layout & Spatial Zoning</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-ivory tracking-tight">
-              Spaces Designed for Seamless Celebrations
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-ivory tracking-tight leading-[1.15]">
+              Spaces Designed for Dignified Celebrations.
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-neutral-400 max-w-md mt-4 md:mt-0 font-light">
-            Every square foot of Hriday Hall is designed to maintain distinct flows between ceremony rituals, 
-            dining service, and guest relaxation.
+          <p className="text-xs sm:text-sm text-neutral-300 max-w-md mt-4 md:mt-0 font-light leading-relaxed">
+            Every square foot of Hriday Hall maintains discrete circulation between ceremonial rituals, 
+            dining hospitality, and guest relaxation.
           </p>
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 border-b border-brand-border pb-4 mb-8">
+        <div className="flex flex-wrap gap-2.5 pb-6 border-b border-brand-border/60 mb-10">
           <button
             onClick={() => setActiveTab('hall')}
-            className={`px-5 py-2.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
+            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'hall'
-                ? 'bg-brand-gold text-brand-dark shadow-md'
-                : 'bg-brand-card/60 text-neutral-300 hover:text-white border border-brand-border'
+                ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
+                : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
             Main Banquet Hall
@@ -126,10 +126,10 @@ export const SpacesSection: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('stage')}
-            className={`px-5 py-2.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
+            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'stage'
-                ? 'bg-brand-gold text-brand-dark shadow-md'
-                : 'bg-brand-card/60 text-neutral-300 hover:text-white border border-brand-border'
+                ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
+                : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
             Ceremony Stage
@@ -137,10 +137,10 @@ export const SpacesSection: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('dining')}
-            className={`px-5 py-2.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
+            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'dining'
-                ? 'bg-brand-gold text-brand-dark shadow-md'
-                : 'bg-brand-card/60 text-neutral-300 hover:text-white border border-brand-border'
+                ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
+                : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
             Dining & Buffet Floor
@@ -148,10 +148,10 @@ export const SpacesSection: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('facilities')}
-            className={`px-5 py-2.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
+            className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-luxury font-medium transition-all duration-300 ${
               activeTab === 'facilities'
-                ? 'bg-brand-gold text-brand-dark shadow-md'
-                : 'bg-brand-card/60 text-neutral-300 hover:text-white border border-brand-border'
+                ? 'bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark text-brand-dark font-bold shadow-gold-subtle scale-102'
+                : 'bg-brand-card/70 text-neutral-300 hover:text-white border border-brand-border/80 hover:border-brand-gold/40'
             }`}
           >
             Parking & Amenities
@@ -159,11 +159,10 @@ export const SpacesSection: React.FC = () => {
         </div>
 
         {/* Space Showcase Card */}
-        <div className="bg-brand-card rounded-xl border border-brand-border overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
+        <div className="bg-brand-card rounded-2xl border-luxury overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-luxury-card">
           
           {/* Space Image */}
-          <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[440px] overflow-hidden bg-black">
-            {/* [REFACTORED] Multi-resolution responsive picture element */}
+          <div className="lg:col-span-7 relative min-h-[360px] sm:min-h-[460px] overflow-hidden bg-black">
             <picture>
               <source media="(max-width: 640px)" srcSet={currentSpace.mobileImage} type="image/webp" />
               <source media="(max-width: 1024px)" srcSet={currentSpace.tabletImage} type="image/webp" />
@@ -174,28 +173,28 @@ export const SpacesSection: React.FC = () => {
                 alt={currentSpace.alt}
                 width={currentSpace.width}
                 height={currentSpace.height}
-                className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-95"
+                className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-[0.92]"
                 key={currentSpace.image}
               />
             </picture>
-            <div className="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-md px-3 py-1.5 rounded border border-brand-gold/40 text-[11px] font-semibold text-brand-gold uppercase tracking-wider">
+            <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-brand-gold/30 text-[10px] font-semibold text-brand-gold uppercase tracking-luxury shadow-md">
               {currentSpace.capacity}
             </div>
           </div>
 
           {/* Space Details & Specifications */}
-          <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between bg-brand-surface/50">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-brand-gold font-bold">
+              <span className="text-[10px] uppercase tracking-luxury text-brand-gold font-semibold block">
                 {currentSpace.tagline}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-white mt-1">
+              <h3 className="font-serif text-2xl sm:text-3xl text-white mt-1.5 font-normal">
                 {currentSpace.name}
               </h3>
 
-              <div className="mt-6 space-y-3">
+              <div className="mt-8 space-y-3.5">
                 {currentSpace.specs.map((spec, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
+                  <div key={i} className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
                       {spec}
@@ -205,17 +204,17 @@ export const SpacesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-8 mt-8 border-t border-brand-border flex items-center justify-between">
+            <div className="pt-8 mt-8 border-t border-brand-border/60 flex items-center justify-between">
               <div>
-                <p className="text-[10px] uppercase tracking-wider text-neutral-400">Venue Capacity</p>
-                <p className="text-sm font-semibold text-white">Up to 300 Guests</p>
+                <p className="text-[10px] uppercase tracking-luxury text-neutral-400">Total Scale</p>
+                <p className="text-sm font-medium text-white">Up to 300 Guests</p>
               </div>
 
               <a
                 href="#inquiry"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded bg-brand-gold/20 hover:bg-brand-gold border border-brand-gold text-brand-gold hover:text-brand-dark text-xs uppercase tracking-wider font-semibold transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-gold/15 hover:bg-brand-gold text-brand-gold hover:text-brand-dark border border-brand-gold/40 text-xs uppercase tracking-luxury font-bold transition-all duration-300 hover:shadow-gold-subtle"
               >
-                <span>Enquire Space</span>
+                <span>Check Availability</span>
                 <span className="text-sm">→</span>
               </a>
             </div>
