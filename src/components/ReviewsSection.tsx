@@ -97,17 +97,20 @@ export const ReviewsSection: React.FC = () => {
               Consistently commended for prime Spine Road accessibility, dependable air conditioning, and prompt management across <strong className="text-white font-medium">{BUSINESS_DATA.ratings.google.totalReviews}+ public Google reviews</strong>.
             </p>
 
-            <div className="pt-6 mt-6 border-t border-brand-border/60 flex items-center justify-between">
+            <div className="pt-6 mt-6 border-t border-brand-border/60 flex flex-wrap items-center justify-between gap-3">
               <span className="text-[11px] text-neutral-400 font-light">Sant Nagar · Moshi · PCMC</span>
-              <a
-                href={BUSINESS_DATA.ratings.google.verifiedUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-luxury text-brand-gold hover:text-brand-gold-light font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-brand-gold"
-              >
-                <span>View Google Profile</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href={BUSINESS_DATA.ratings.google.writeReviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-luxury text-brand-gold hover:text-brand-gold-light font-bold transition-colors"
+                  title="Open direct Google review submission dialog"
+                >
+                  <span>Write Review on Google</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
 

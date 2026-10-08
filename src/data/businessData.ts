@@ -38,7 +38,7 @@ export const BUSINESS_DATA = {
       lat: 18.6720,
       lng: 73.8436
     },
-    googleMapsUrl: "https://maps.google.com/?q=Hriday+Hall+Moshi+Pune"
+    googleMapsUrl: "https://www.google.com/maps/place/Hriday+Hall/@18.6496312,73.8455982,17z/data=!4m8!3m7!1s0x3bc2c7f426197ee3:0xfdb9ff46ae7b21dc!8m2!3d18.6496312!4d73.8455982!9m1!1b1"
   },
 
   // Verified Phone & Contact
@@ -71,7 +71,9 @@ export const BUSINESS_DATA = {
       score: 4.1,
       totalReviews: 979,
       source: "Google Business Profile",
-      verifiedUrl: "https://www.google.com/maps/search/Hriday+Hall+Moshi+Pune"
+      placeId: "ChIJ434ZJvTHwjsR3CF7rkb_uf0",
+      verifiedUrl: "https://www.google.com/maps/place/Hriday+Hall/@18.6496312,73.8455982,17z/data=!4m8!3m7!1s0x3bc2c7f426197ee3:0xfdb9ff46ae7b21dc!8m2!3d18.6496312!4d73.8455982!9m1!1b1",
+      writeReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJ434ZJvTHwjsR3CF7rkb_uf0"
     },
     justdial: {
       score: 4.0,

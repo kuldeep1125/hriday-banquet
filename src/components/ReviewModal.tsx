@@ -61,8 +61,8 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onSub
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     }
-    // Open Google review dialog / profile in new tab
-    window.open(BUSINESS_DATA.ratings.google.verifiedUrl, '_blank', 'noopener,noreferrer');
+    // Open Google write review dialog directly in new tab
+    window.open(BUSINESS_DATA.ratings.google.writeReviewUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleResetAndClose = () => {
